@@ -1,4 +1,4 @@
-using TMPro;
+﻿using TMPro;
 using UnityEngine;
 using UnityEngine.TextCore.LowLevel;
 using UnityEngine.TextCore.Text;
@@ -46,6 +46,8 @@ public void OnDropdownValueChanged(int index)
 #else
         mText.font.fallbackFontAssetTable.Clear();
         mText.font.fallbackFontAssetTable.Add(mFontAsset);
+        // Fontのフォールバックを更新した場合、SetAllDirty()を呼ぶ必要がある
+        mText.SetAllDirty();
 #endif
 
     }
